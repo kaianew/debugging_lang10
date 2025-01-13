@@ -511,7 +511,7 @@ public class TypeUtilsTest<B> {
     public void testTypesSatisfyVariables() throws SecurityException, NoSuchFieldException,
             NoSuchMethodException {
         Map<TypeVariable<?>, Type> typeVarAssigns = new HashMap<TypeVariable<?>, Type>();
-        Integer max = TypeUtilsTest.stub();
+        Integer max = TypeUtilsTest.<Integer> stub();
         typeVarAssigns.put(getClass().getMethod("stub").getTypeParameters()[0], Integer.class);
         Assert.assertTrue(TypeUtils.typesSatisfyVariables(typeVarAssigns));
         typeVarAssigns.clear();
