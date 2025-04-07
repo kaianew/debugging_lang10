@@ -7,6 +7,8 @@ This bug occurs on the Windows computer we're running the study on and my MacBoo
 5. Run the tests again. 16 should fail. Uh oh!
 6. Profit.
 
+To undo a patch, you can click into the file that the patch was applied to and do a Ctrl/Command-Z. 
+
 Applying the correctAPR.patch results in no failing tests, so at least there's that.
 
 Speculation: the deceptive patch swaps out a guard call to Character.isHighSurrogate(c). I think that isHighSurrogate() may require some parsing behavior that is present in some IDE or JDK/Java default parsing settings. Additionally, changing the JDK to 8 causes other parse-related issues.
